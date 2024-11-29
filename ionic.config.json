@@ -1,0 +1,7 @@
+{
+  "name": "ucommers",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
