@@ -1,0 +1,292 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" >
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons>
+    <h4 class="titulo_compra mt-2">Carrito</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="mensaje" class="cont_msj">
+    <h5 class="text-muted">{{ mensaje }}</h5>
+    <img src="assets/images/carro-vacio.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+  </div>
+  <span *ngIf="isDesktop">
+    <ion-grid *ngFor="let vendedor of productos | keyvalue" class="carstas_x_vendedor">
+      <ion-row>
+        <span class="card_productos_carrito">
+          <ion-card *ngFor="let producto of vendedor.value.productos">
+            <ion-grid>
+              <ion-row>
+
+                <ion-col>
+                  <div class="espacio_img">
+                    <img [src]="urlImg + '/' + producto.imagen" alt="imagen del producto" class="imagen_producto" />
+                  </div>
+                </ion-col>
+
+                <ion-col class="descripcion_products">
+                  <p>
+                    {{ producto.nombre }}
+                    <br>
+                    <strong style="font-size: 15px;" class="text-success">${{ producto.precio }}</strong>
+                    <span class="ms-2 text-dark">{{producto.stock}} Exist</span>
+                    <br>
+                    {{ producto.descripcion }}
+                  </p>
+                  <ion-buttons class="menu-button">
+                    <ion-button class="btn_decorate_all size_text" color="danger"
+                      (click)="confirmarEliminarCarrito(producto.id)">
+                      Eliminar
+                    </ion-button>
+                    <ion-button class="btn_decorate_all size_text" color="primary" [disabled]="producto.stock === 0"
+                    (click)="hacerPedido(producto, vendedor)">
+                      Comprar ahora
+                    </ion-button>
+                  </ion-buttons>
+                </ion-col>
+
+                <ion-col class="seccion_cantidad">
+                  <ion-item>
+                    <div class="contador">
+                      <ion-button size="small" color="primary" fill="outline" (click)="decrementarCantidad(producto)"
+                        [disabled]="producto.cantidad <= 1">
+                        -
+                      </ion-button>
+
+                      <ion-input type="number" [(ngModel)]="producto.cantidad" [value]="producto.cantidad" readonly>
+                      </ion-input>
+
+                      <ion-button size="small" color="secondary" fill="outline" (click)="incrementarCantidad(producto)"
+                        [disabled]="producto.cantidad >= producto.stock">
+                        +
+                      </ion-button>
+                    </div>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </span>
+
+        <ion-card class="total_pagar_x_vendedor">
+          <h6>Resumen de compra</h6>
+          <h6>Vendedor: {{ vendedor.value.NombreVendedor }}</h6>
+          <hr>
+          <div class="text-muted">
+            <table class="table-compact">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let producto of vendedor.value.productos">
+                  <td>{{ producto.nombre }}</td>
+                  <td>${{ producto.precio }}</td>
+                  <td>{{ producto.cantidad }}</td>
+                  <td><strong>${{ producto.precio * producto.cantidad }}</strong></td>
+                </tr>
+              </tbody>
+
+              <tfoot>
+                <tr>
+                  <td colspan="3" class="text-right"><strong>Subtotal:</strong></td>
+                  <td class="text-primary"><strong>${{ getSubtotal(vendedor.value.productos) }}</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right"><strong>IVA (16%):</strong></td>
+                  <td class="text-primary"><strong>${{ getIVA(vendedor.value.productos) }}</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="text-right"><strong>Total a pagar:</strong></td>
+                  <td class="text-primary"><strong>${{ getTotalConIVA(vendedor.value.productos) }}</strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <ion-button color="success" class="mt-2" (click)="hacerPedidoGrupal(vendedor.value.productos, vendedor)">
+            Hacer pedido
+          </ion-button>
+        </ion-card>
+
+      </ion-row>
+
+    </ion-grid>
+  </span>
+
+  <span *ngIf="isTablet">
+    <ion-grid *ngFor="let vendedor of productos | keyvalue" class="carstas_x_vendedor">
+      <ion-list>
+        <span class="card_productos_carrito" *ngFor="let producto of vendedor.value.productos">
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img [src]="urlImg + '/' + producto.imagen" alt="imagen del producto" class="imagen_producto" />
+            </ion-thumbnail>
+
+            <ion-label>
+              <h2>{{ producto.nombre }}</h2>
+              <p><strong class="text-success">${{ producto.precio }}</strong></p>
+              <p class="ms-2 text-dark">{{producto.stock}} Exist</p>
+              <p>{{ producto.descripcion }}</p>
+            </ion-label>
+
+            <ion-buttons slot="end">
+              <ion-button color="danger" (click)="confirmarEliminarCarrito(producto.id)">Eliminar</ion-button>
+              <ion-button color="primary" [disabled]="producto.stock === 0" (click)="hacerPedido(producto, vendedor)">Comprar
+                ahora</ion-button>
+            </ion-buttons>
+
+            <ion-item>
+              <div class="contador">
+                <ion-button size="small" color="primary" fill="outline" (click)="decrementarCantidad(producto)"
+                  [disabled]="producto.cantidad <= 1">-</ion-button>
+                <ion-input type="number" [(ngModel)]="producto.cantidad" [value]="producto.cantidad"
+                  readonly></ion-input>
+                <ion-button size="small" color="secondary" fill="outline" (click)="incrementarCantidad(producto)"
+                  [disabled]="producto.cantidad >= producto.stock">+</ion-button>
+              </div>
+            </ion-item>
+          </ion-item>
+        </span>
+
+        <ion-item>
+          <ion-label>
+            <h6>Resumen de compra</h6>
+            <h6>Vendedor: {{ vendedor.value.NombreVendedor }}</h6>
+            <hr />
+            <div class="text-muted">
+              <table class="table-compact">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let producto of vendedor.value.productos">
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td><strong>${{ producto.precio * producto.cantidad }}</strong></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>Subtotal:</strong></td>
+                    <td class="text-primary"><strong>${{ getSubtotal(vendedor.value.productos) }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>IVA (16%):</strong></td>
+                    <td class="text-primary"><strong>${{ getIVA(vendedor.value.productos) }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>Total a pagar:</strong></td>
+                    <td class="text-primary"><strong>${{ getTotalConIVA(vendedor.value.productos) }}</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <ion-button color="success" class="mt-2" (click)="hacerPedidoGrupal(vendedor.value.productos, vendedor)">
+              Hacer pedido
+            </ion-button>
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-grid>
+  </span>
+
+  <span *ngIf="isMobile">
+    <ion-grid *ngFor="let vendedor of productos | keyvalue" class="carstas_x_vendedor">
+      <ion-list>
+        <!-- Lista de productos -->
+        <span *ngFor="let producto of vendedor.value.productos">
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img [src]="urlImg + '/' + producto.imagen" alt="imagen del producto" class="imagen_producto" />
+            </ion-thumbnail>
+
+            <ion-label>
+              <h2>{{ producto.nombre }}</h2>
+              <p><strong class="text-success">${{ producto.precio }}</strong> <span class="ms-2 text-dark">{{
+                  producto.stock }} Exist</span></p>
+              <p>{{ producto.descripcion }}</p>
+
+              <div class="contador">
+                <ion-button size="small" color="primary" fill="outline" (click)="decrementarCantidad(producto)"
+                  [disabled]="producto.cantidad <= 1">-</ion-button>
+                <ion-input type="number" [(ngModel)]="producto.cantidad" [value]="producto.cantidad"
+                  readonly></ion-input>
+                <ion-button size="small" color="secondary" fill="outline" (click)="incrementarCantidad(producto)"
+                  [disabled]="producto.cantidad >= producto.stock">+</ion-button>
+              </div>
+
+              <ion-button color="danger" (click)="confirmarEliminarCarrito(producto.id)">Eliminar</ion-button>
+              <ion-button color="primary" [disabled]="producto.stock === 0" (click)="hacerPedido(producto, vendedor.value)">Comprar
+                ahora</ion-button>
+            </ion-label>
+          </ion-item>
+        </span>
+
+        <!-- Resumen de compra -->
+        <ion-item>
+          <ion-label>
+            <h6>Resumen de compra</h6>
+            <h6>Vendedor: {{ vendedor.value.NombreVendedor }}</h6>
+            <hr />
+            <div class="text-muted">
+              <table class="table-compact">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let producto of vendedor.value.productos">
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td><strong>${{ producto.precio * producto.cantidad }}</strong></td>
+                  </tr>
+                </tbody>
+
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>Subtotal:</strong></td>
+                    <td class="text-primary"><strong>${{ getSubtotal(vendedor.value.productos) }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>IVA (16%):</strong></td>
+                    <td class="text-primary"><strong>${{ getIVA(vendedor.value.productos) }}</strong></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-right"><strong>Total a pagar:</strong></td>
+                    <td class="text-primary"><strong>${{ getTotalConIVA(vendedor.value.productos) }}</strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <ion-button color="success" class="mt-2" (click)="hacerPedidoGrupal(vendedor.value.productos, vendedor.value)">
+              Hacer pedido
+            </ion-button>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-grid>
+  </span>
+
+
+</ion-content>

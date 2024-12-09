@@ -1,0 +1,98 @@
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="" defaultHref="star/trabajos"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <!-- Grid básico -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Columna 1</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Esta columna ocupa el 100% en móviles y el 50% en pantallas medianas en adelante.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Columna 2</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Comportamiento responsivo similar a la columna 1.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Segunda fila -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="4" size-lg="2">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Columna A</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Adaptación múltiple según el tamaño de pantalla.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-- Repite para más columnas -->
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-col size="12" size-md="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Centrado Horizontal y Verticalmente</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Uso de <code>justify-content-center</code> y <code>align-items-center</code>.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <div class="box">Columna 1</div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="box">Columna 2</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Columna Desplazada</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Esta columna está desplazada 3 unidades a la derecha.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

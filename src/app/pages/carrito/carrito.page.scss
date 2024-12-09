@@ -1,0 +1,170 @@
+.carstas_x_vendedor {
+    margin: 0;
+    padding: 10px;
+    width: 100%; // Ajusta este valor para controlar el ancho 
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carstas_x_vendedor ion-row {
+    display: flex;
+    gap: 15px;
+}
+
+.card_productos_carrito {
+    margin: 0px;
+    padding: 0px;
+    width: 60%;
+    height: auto;
+}
+
+.total_pagar_x_vendedor {
+    margin: 0;
+    padding: 10px;
+    width: 30%;
+    height: auto;
+    max-height: auto;
+}
+
+// ---- ---- 
+
+// contenedor de img del producto 
+.espacio_img {
+    width: 5rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; // Oculta cualquier parte que exceda el contenedor
+}
+
+// img para q se adapte a su contenedor  
+.imagen_producto {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // Mantiene la proporción de la imagen y la ajusta dentro del contenedor 
+}
+
+.descripcion_products {
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+}
+
+.seccion_cantidad {
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    gap: 30px; // Separación entre elementos
+}
+
+.cont_msj {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img_icon {
+    width: 30px;
+    height: auto;
+}
+
+
+.contador {
+    display: flex;
+    /* Organiza los elementos en fila */
+    align-items: center;
+    /* Alinea verticalmente en el centro */
+    justify-content: space-between;
+    /* Espacio uniforme entre elementos */
+    width: 100%;
+    /* Asegura que ocupe todo el espacio disponible */
+}
+
+.contador ion-button {
+    margin: 0 5px;
+    /* Espaciado horizontal entre los botones y el input */
+    padding: 0 10px;
+    /* Ajusta el tamaño de los botones */
+}
+
+.contador ion-input {
+    text-align: center;
+    /* Centra el contenido del campo */
+    width: 50px;
+    /* Ajusta el ancho del input */
+    margin: 0 5px;
+    /* Espaciado entre input y botones */
+}
+
+
+
+
+
+.table-compact {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.table-compact th,
+.table-compact td {
+    border: 1px solid #dddddd00;
+    padding: 5px;
+    text-align: left;
+}
+
+.table-compact thead th {
+    background-color: #f4f4f445;
+    font-weight: bold;
+}
+
+.table-compact tfoot td {
+    font-weight: bold;
+    background-color: #f9f9f96d;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+
+
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+// --- WEB ☢️ 
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {}

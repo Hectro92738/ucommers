@@ -1,0 +1,99 @@
+.resumen-pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    background-color: #f7f9fc;
+
+    .container {
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .tabla-container {
+        overflow-x: auto;
+        margin-bottom: 20px;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+            th,
+            td {
+                padding: 12px 15px;
+                border: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f4f4f4;
+                font-weight: bold;
+            }
+
+            tfoot td {
+                font-weight: bold;
+                color: #007bff;
+            }
+        }
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        ion-button {
+            font-size: 1rem;
+        }
+    }
+}
+
+.img_icon {
+    width: 30px;
+    height: auto;
+}
+
+.btn_efectivo {
+    background-color: var(--primary-all-v1);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #4187ffa9;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.4;
+    }
+}
+
+.bt_ubicacion {
+    background-color: #1e89b7c8;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #1e89b783;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.4;
+    }
+}

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+      <ion-button expand="block" (click)="downloadTicket()" class="btn-descargar ms-3">
+        Compartir
+        <ion-icon class="ms-2" name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ticket-container">
+    <iframe *ngIf="pdfUrl" [src]="pdfUrl" width="100%" height="500px"></iframe>
+  </div>
+</ion-content>

@@ -1,0 +1,242 @@
+.active-item {
+  border-left: 8px solid rgb(21, 0, 253);
+}
+
+.img_icon {
+  width: 30px;
+  height: auto;
+}
+
+.custom-search-bar {
+  --box-shadow: none; // Elimina cualquier sombra
+  --background: rgba(255, 255, 255, 0.098); // Asegúrate de que el fondo sea transparente
+  border: none; // Elimina cualquier borde existente
+  border-bottom: 1px solid #fefefe; // Añade una línea inferior
+  padding: 0px;
+  color: #ffffff;
+  // width: auto;
+  margin-right: 7px;
+  margin-left: 1rem;
+}
+
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// .barra_web1 ion-buttons,
+// ion-title {
+//   animation: slideInRight 1.5s ease-out;
+// }
+
+
+// ----------------- 
+
+// Boton que solo aparece en web 
+.custom-fab {
+  bottom: 30px;
+  right: 45px;
+  left: auto;
+  top: auto;
+}
+
+
+// Estilo para la lista dentro del menú Lateral 
+.list_menu {
+  padding: 0;
+  margin-top: 1rem;
+}
+
+// Estilo para los ítems del menú Lateral 
+.menu-item {
+  background-color: #dcdcdc00 !important;
+  --background: transparent;
+  /* Esto puede ayudar a eliminar el fondo predeterminado */
+  font-size: 12px;
+  --min-height: 40px;
+  --border-color: #0000000c;
+}
+
+.menu-item:hover {
+  background-color: #5656561a !important;
+}
+
+/* Estilo para los íconos dentro del menú Lateral */
+.menu-icon {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Estilo para el título del menú Lateral */
+.menu-title {
+  font-size: 18px;
+}
+
+.logo_img_nav_movil {
+  margin-left: 5px;
+  width: 1%;
+  height: auto;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  background-color: rgba(255, 16, 16, 0.916);
+  color: white;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  padding: 0;
+}
+
+.cart-badge-mobil {
+  position: absolute;
+  top: 2px;
+  right: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding: 0;
+}
+
+// ----------------- 
+
+// --- Movil 📱 ---
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+  .search-bar {
+    margin: 5px;
+    width: auto;
+    height: auto;
+  }
+
+  .logo_img_nav_movil {
+    margin-left: 5px;
+    width: 15%;
+    height: auto;
+  }
+
+  .menu-button ion-button {
+    font-size: 12px;
+    margin-right: 13px;
+  }
+
+  // Tamaño de ancho del menu lateral 
+  .custom-menu {
+    --width: 200px !important;
+  }
+
+  .custom-search-bar {
+    --box-shadow: none; // Elimina cualquier sombra
+    --background: rgba(255, 255, 255, 0.098); // Asegúrate de que el fondo sea transparente
+    border: none; // Elimina cualquier borde existente
+    border-bottom: 1px solid #fefefe; // Añade una línea inferior
+    padding: 0px; // Asegúrate de que no haya padding adicional
+    color: #ffffff;
+    // width: auto;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .search-bar {
+    width: auto;
+    height: auto;
+    margin: 5px;
+  }
+
+  .logo_img_nav_movil {
+    margin-left: 5px;
+    width: 15%;
+    height: auto;
+  }
+
+  .menu-button ion-button {
+    font-size: 12px;
+    margin-right: 13px;
+  }
+
+  .custom-search-bar {
+    --box-shadow: none; // Elimina cualquier sombra
+    --background: rgba(255, 255, 255, 0.098); // Asegúrate de que el fondo sea transparente
+    border: none; // Elimina cualquier borde existente
+    border-bottom: 1px solid #fefefe; // Añade una línea inferior
+    padding: 0px; // Asegúrate de que no haya padding adicional
+    color: #ffffff;
+    // width: auto;
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+}
+
+// --- WEB 💻 ---
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .logo_img_nav {
+    margin-left: 1rem;
+    width: 10%;
+    height: auto;
+  }
+
+  .menu-button ion-button {
+    font-size: 14px;
+    margin-right: 11px;
+  }
+
+}
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .logo_img_nav {
+    margin-left: 15px;
+    width: 12%;
+    height: auto;
+  }
+
+  .menu-button ion-button {
+    font-size: 13px;
+    margin-right: 15px;
+  }
+
+}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {
+  .logo_img_nav {
+    margin-left: 20px;
+    width: 12%;
+    height: auto;
+  }
+
+  .menu-button ion-button {
+    font-size: 13px;
+    margin-right: 15px;
+  }
+
+}
+

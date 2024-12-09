@@ -1,0 +1,178 @@
+ion-button {
+  margin-top: 1rem;
+}
+
+ion-input {
+  border-bottom: 1px solid #00000000 !important;
+}
+
+ion-list {
+  margin: 0px;
+}
+
+.barra_login {
+  // background: linear-gradient(to bottom, var(--primary-all-v1) 0%, #0a5ae377 100%) !important;
+  // background: linear-gradient(to bottom, var(--primary-all-v1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  padding: 1px;
+}
+
+
+.register-link {
+  margin-top: 16px;
+  text-align: center;
+}
+
+// --- ---- --- --- --- --- --- --- --- --- --- --- 
+
+//  --- ---- Login 
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.login-form {
+  background-color: #f3f3f300;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.049);
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  /* Mantener proporciones del logo */
+}
+
+.buttons-container ion-button {
+  margin-top: 10px;
+}
+
+.btns_all {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn_all {
+  background-color: var(--primary-all-v1);
+  width: 100%;
+  color: black;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+
+  &:hover {
+    background-color: #4187ffa9;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.4;
+  }
+}
+
+.btn_registro {
+  background-color: #1e89b7c8;
+  width: 100%;
+  color: black;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+
+  &:hover {
+    background-color: #1e89b783;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.4;
+  }
+}
+
+.btn_google {
+  background-color: #f4f4f400;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+
+  &:hover {
+    background-color: #6b788e08;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.4;
+  }
+}
+
+
+// --- Movil 📱 ---
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+  ion-content {
+    --padding-top: 4rem !important;
+  }
+
+  .img_v2 {
+    width: 35%;
+    height: auto;
+  }
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  ion-content {
+    --padding-top: 4rem !important;
+  }
+
+  .img_v2 {
+    width: 35%;
+    height: auto;
+  }
+
+}
+
+// --- WEB 💻 ---
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  ion-content {
+    --padding-top: 4rem !important;
+  }
+
+  .img_v2 {
+    width: 30%;
+    height: auto;
+  }
+
+}
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .img_v2 {
+    width: 25%;
+    height: auto;
+  }
+
+
+}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {
+  .img_v2 {
+    width: 20%;
+    height: auto;
+  }
+
+}

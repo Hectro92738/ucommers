@@ -1,2 +1,271 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+// src/theme/variables.scss
+ion-content {
+    --background: #fefefe;
+}
+
+.btn_regresar {
+    background-color: #ffffff68;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.062);
+    margin-left: 10px;
+}
+
+// Variables globales de tema claro  3079f8
+:root {
+    --ion-background-color: #ffffff;
+    --primary-all-v1: #4187ff;
+    --primary-all-v2: #3079f8e4;
+}
+
+.btn_decorate_all {
+    background-color: #ffffff00;
+    border-radius: 25px;
+    padding: 1px;
+    font-weight: 12px;
+}
+
+.btn_decorate_all:hover {
+    border-radius: 0px;
+    border-bottom: 1px solid #ffffff;
+    background-color: #ffffff0f;
+}
+
+.style_button {
+    color: var(--primary-all-v1);
+}
+
+.btn_ahow_pass {
+    color: black;
+    margin-top: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn_ahow_pass:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+.barra_web1 {
+    background-color: var(--primary-all-v1) !important; // Usa tu variable de color
+    // position: absolute; 
+}
+
+// abrra inferioir en web 
+.barra_web1 ion-button {
+    color: #ffffff;
+    // font-weight: bold;
+}
+
+.barra_web2 {
+    // background: linear-gradient(to top, var(--primary-all-v1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+    background-color: rgb(0, 0, 0) !important; // Usa tu variable de color
+}
+
+.barra_web2 ion-tab-button {
+    color: var(--primary-all-v1);
+    background-color: rgba(255, 255, 255, 0.075);
+    border-radius: 0px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+ion-header {
+    box-shadow: none !important;
+}
+
+ion-loading.my-custom-loading {
+    .loading-wrapper {
+        background: transparent url('../assets/images/duck.gif') no-repeat center center;
+        // background-size: contain;
+        background-size: 200px 200px;
+        /* to change dimension of background */
+        padding-top: 200px;
+        /* padding top of white square */
+        padding-bottom: 200px;
+        /* padding bottom of white square */
+        padding-left: 200px;
+        padding-right: 200px;
+        /* Removemos la sombra del borde que le da altura*/
+        box-shadow: none;
+    }
+}
+
+ion-loading.my-custom-loading-2 {
+    .loading-wrapper {
+        background: transparent url('../assets/images/tim-gilardi-bunny-loading-animation3.gif') no-repeat center center;
+        // background-size: contain;
+        background-size: 200px 200px;
+        /* to change dimension of background */
+        padding-top: 200px;
+        /* padding top of white square */
+        padding-bottom: 200px;
+        /* padding bottom of white square */
+        padding-left: 200px;
+        padding-right: 200px;
+        /* Removemos la sombra del borde que le da altura*/
+        box-shadow: none;
+    }
+}
+
+ion-loading.my-custom-loading-3 {
+
+    .loading-wrapper {
+        background: transparent url('../assets/images/Loading.gif') no-repeat center center;
+        // background-size: contain;
+        background-size: 200px 200px;
+        /* to change dimension of background */
+        padding-top: 200px;
+        /* padding top of white square */
+        padding-bottom: 200px;
+        /* padding bottom of white square */
+        padding-left: 200px;
+        padding-right: 200px;
+        /* Removemos la sombra del borde que le da altura*/
+        box-shadow: none;
+    }
+}
+
+// ----------------- ⬇️💫 -------------------------------- 
+
+// tamaño del icono versión 1 
+.size_icon_v1 {
+    font-size: 30px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+// margen del container 
+.container_css {
+    margin: 1rem;
+    margin-bottom: 5rem;
+}
+
+// Tamaño del menú lateral 
+.menu_size {
+    width: 20px;
+}
+
+
+
+
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo_compra {
+    margin-left: 25px;
+}
+
+// ----------------- 
+// ----------------- 
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+    .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid var(--primary-all-v1);
+        border-radius: 50%;
+        top: 35%;
+        left: 40%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        position: fixed;
+        z-index: 1000;
+    }
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid var(--primary-all-v1);
+        border-radius: 50%;
+        top: 35%;
+        left: 45%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        position: fixed;
+        z-index: 1000;
+    }
+}
+
+// --- WEB ☢️ 
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid var(--primary-all-v1);
+        border-radius: 50%;
+        top: 34%;
+        left: 45%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        position: fixed;
+        z-index: 1000;
+    }
+}
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid var(--primary-all-v1);
+        border-radius: 50%;
+        top: 35%;
+        left: 44%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        position: fixed;
+        z-index: 1000;
+    }
+}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {
+    .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid var(--primary-all-v1);
+        border-radius: 50%;
+        top: 40%;
+        left: 45%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        position: fixed;
+        z-index: 1000;
+    }
+}

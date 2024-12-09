@@ -1,0 +1,158 @@
+.css_img {
+    width: 3px;
+    height: auto;
+}
+
+.btn_status {
+    border: 1px solid #00000031;
+    border-radius: 5px;
+    background-color: #296eef00;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+
+    &:hover {
+        border: 1px solid #29b0ef42;
+    }
+}
+
+//  --- ---- FORM 
+.insert_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.insert_form {
+    padding: 0px;
+    border-radius: 12px;
+    width: 80%;
+}
+
+.img_icon {
+    width: 30px;
+    height: auto;
+}
+
+.btn_all_admin {
+    background-color: rgba(5, 163, 255, 0.406);
+    border-radius: 12px;
+}
+
+
+
+/* Estilo para la sección de productos */
+.mis-productos-section {
+    padding: 0rem;
+}
+
+.product-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.055);
+}
+
+.table tr {
+    vertical-align: middle;
+}
+
+.ganancias-section .grafica-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.ganancias-section canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+// ----------------- 
+// ----------------- 
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+    .css_img {
+        width: 25px;
+        height: auto;
+    }
+
+
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+    .insert_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .insert_form {
+        background-color: #f3f3f350;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0);
+        width: 100%;
+    }
+
+    .table th,
+    .table td {
+        font-size: 0.875rem;
+        /* Reduce el tamaño del texto */
+        padding: 0.5rem;
+    }
+
+    .product-img {
+        width: 40px;
+        height: 40px;
+        /* Ajustar tamaño de la imagen para dispositivos pequeños */
+    }
+
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+    .css_img {
+        width: 25px;
+        height: auto;
+    }
+
+    .table th,
+    .table td {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    .product-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+// --- WEB ☢️ 
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {}

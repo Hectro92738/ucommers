@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons>
+    <h4 class="titulo_compra mt-2">Mis compras</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contenedor_list">
+    <ion-list>
+      <ion-item *ngFor="let compra of compras">
+        <ion-label>
+          <!-- Mostrar imágenes en miniatura en la parte superior -->
+          <ion-row>
+            <ion-col>
+              <h3 class="text-success"><strong>{{compra.estado}}</strong></h3>
+            </ion-col>
+            <span *ngIf="isMobile">
+              <ion-col size="auto" *ngFor="let producto of compra.productos.slice(0, 4)"
+                (click)="verDetalleProducto(producto.id)">
+                <img [src]="urlImg + '/' + producto.producto_imagen" alt="Imagen del producto"
+                  class="img-thumbnail round-img" />
+              </ion-col>
+              <ion-col size="auto" *ngIf="compra.productos.length > 4">
+                <span class="more-images-indicator">...</span>
+              </ion-col>
+            </span>
+            <span *ngIf="isDesktop">
+              <ion-col size="auto" *ngFor="let producto of compra.productos.slice(0, 8)"
+                (click)="verDetalleProducto(producto.id)">
+                <img [src]="urlImg + '/' + producto.producto_imagen" alt="Imagen del producto"
+                  class="img-thumbnail round-img" />
+              </ion-col>
+              <ion-col size="auto" *ngIf="compra.productos.length > 8">
+                <span class="more-images-indicator">...</span>
+              </ion-col>
+            </span>
+          </ion-row>
+          <hr>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="7">
+                <p>Fecha: {{ formatDate(compra.fecha) }}</p>
+                <p>Método de Pago: <button class="btn_warning" disabled><ion-icon
+                      name="logo-paypal"></ion-icon>{{compra.metodo_pago}}</button></p>
+                <p style="font-size: 12px;">Subtotal: <strong class="text-danger">${{compra.total}}</strong></p>
+                <p style="font-size: 12px;">IVA: <strong class="text-danger">${{ calculariva(compra.total) }}</strong></p>
+                <p style="font-size: 12px;">Total: <strong class="text-danger">${{ calculartotal(compra.total) }}</strong></p>
+              </ion-col>
+              <ion-col size="auto" class="mt-3">
+                <button class="btn_ver" (click)="detalleCompra(compra.id)">ver compra</button>
+                <button class="btn_ticket ms-3" (click)="pageTicket(compra.id)">Ticket</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  <!-- Mensaje cuando no hay compras-->
+  <div *ngIf="compras.length === 0" class="cont_msj">
+    <h5 class="text-muted">No has realizado ninguna compra</h5>
+    <img src="assets/images/compras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+  </div>
+</ion-content>

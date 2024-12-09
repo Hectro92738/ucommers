@@ -1,0 +1,108 @@
+<ion-header class="header_home">
+  <ion-toolbar class="custom-toolbar barra_web1" color="nome">
+
+    <ion-buttons class="menu-button" slot="start">
+      <ion-button class="btn_decorate_all size_text" (click)="refreshProductos()">
+        Todo
+        <img src="assets/images/all.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+
+      <ion-button *ngFor="let categoria of categorias" class="btn_decorate_all size_text"
+        (click)="filtroProductos(categoria.id)">
+        {{ categoria.nombre }}
+        <!-- <img [src]="categoria.img" alt="Logo" class="img_icon ms-1" loading="lazy"> -->
+      </ion-button>
+    </ion-buttons>
+
+    <!-- <ion-buttons class="menu-button" slot="start">
+      <ion-button class="btn_decorate_all size_text" (click)="refreshProductos()">
+        Todo
+        <img src="assets/images/all.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+      <ion-button class="btn_decorate_all size_text">
+        Comida
+        <img src="assets/images/comida.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+      <ion-button class="btn_decorate_all size_text">
+        Papeleria
+        <img src="assets/images/papeleria.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+      <ion-button class="btn_decorate_all size_text">
+        Tecnología
+        <img src="assets/images/tecnologia.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="ofertas_contenido">
+    <br>
+    <p class="text_inicio">Te presentamos una selección de productos que no te puedes perder. ¡Descubre lo que tenemos
+      para ti!</p>
+  </div> -->
+  <div class="pocicion_cartas">
+    <div class="contenedor_cartas">
+      <div class="carta_producto" *ngFor="let producto of productos" (click)="verDetalleProducto(producto.id)">
+        <h2 class="titulo_producto">{{ producto.nombre }}</h2>
+        <div class="cont_img">
+          <img
+            [src]="producto.imagen ? urlImg + '/' + producto.imagen : 'assets/img_all/XD.jpg'"
+            alt="Imagen {{ producto.nombre }}"
+            class="imagen_producto"
+          />
+        </div>
+        
+        <div class="carta_header">
+          <p class="precio_producto">${{ producto.precio }} <span class="descuento">{{ producto.stock }} exist</span>
+          </p>
+          <p class="contenido_producto">{{ producto.descripcion }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <ion-list class="lista_productos" *ngIf="!isLargeScreen">
+    <ion-item class="item_completo" *ngFor="let producto of productos" (click)="verDetalleProducto(producto.id)">
+      <ion-thumbnail slot="start">
+        <img
+          [src]="producto.imagen ? 'https://cervaya.pro/ApiUcommers/storage/app/public/productos/' + producto.imagen : 'assets/img_all/XD.jpg'"
+          alt="Imagen de {{ producto.nombre }}" class="imagen_producto_list" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="titulo_producto_list">{{ producto.nombre }}</h2>
+        <p class="precio_producto_list">${{ producto.precio }} <span class="descuento_list">{{ producto.stock }}
+            exist</span></p>
+        <p>{{ producto.descripcion}}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list> -->
+  <ion-footer>
+    <ion-toolbar color="none">
+      <ion-grid *ngIf="!isLargeScreen">
+        <ion-row>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button fill="clear" >
+              <ion-icon name="home"></ion-icon>
+              <ion-label>Inicio</ion-label>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button fill="clear" >
+              <ion-icon name="cart"></ion-icon>
+              <ion-label>Carrito</ion-label>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button fill="clear">
+              <ion-icon name="person"></ion-icon>
+              <ion-label>Perfil</ion-label>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
+  
+</ion-content>

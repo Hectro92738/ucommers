@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons>
+    <h4 class="titulo_compra mt-2">Detalle compra</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Título de productos -->
+  <ion-card *ngIf="productos.length > 0">
+    <ion-card-header>
+      <ion-card-title>Productos de la compra</ion-card-title>
+    </ion-card-header>
+
+    <!-- Lista de productos  img -->
+    <ion-list>
+      <ion-item *ngFor="let producto of productos">
+        <ion-thumbnail slot="start">
+          <img [src]="urlImg + '/' + producto.img" alt="imagen del producto" class="imagen_producto" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ producto.nombre }}</h2>
+          <p>Descripción: {{ producto.descripcion }}</p>
+          <p>Cantidad: {{ producto.cantidad }}</p>
+          <p>Precio unitario: {{ producto.precio_unitario | currency }}</p>
+          <p>Subtotal: {{ producto.subtotal | currency }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <!-- Mensaje cuando no hay productos -->
+  <ion-card *ngIf="productos.length === 0">
+    <ion-card-header>
+      <ion-card-title>No se encontraron productos en esta compra</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

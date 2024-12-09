@@ -1,0 +1,32 @@
+ion-card {
+    margin: 10px;
+}
+
+ion-card-title {
+    font-size: 1.2rem;
+    color: #3880ff;
+}
+
+ion-card-content {
+    font-size: 1rem;
+}
+
+/* Media queries para ajustes adicionales */
+@media (min-width: 768px) {
+    ion-card-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    ion-card-title {
+        font-size: 1.6rem;
+    }
+}
+
+.box {
+    background-color: #f4f5f8;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,44 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar barra_login" color="nome">
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="login-container">
+    <form class="login-form mt-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="logo-container">
+        <img src="assets/images/UTEQC.png" alt="Logo" class="logo">
+      </div>
+      <ion-list>
+        <!-- -----  -->
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <!-- -----  -->
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input [type]="showPassword ? 'text' : 'password'" formControlName="password"></ion-input>
+          <div color="none" class="btn_ahow_pass" slot="end" (click)="togglePasswordVisibility()">
+            <ion-icon style="color: black;" [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-buttons class="btns_all mt-3">
+        <button class="btn_all" type="submit" [disabled]="loginForm.invalid">Login</button>
+        <button class="btn_registro" routerLink="/register" shape="round" style="color: rgb(0, 0, 0);"
+          type="button">Registro</button>
+        <button class="btn_google" shape="round" type="button">
+          <img loading="lazy" width="60px" height="20px"
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google">
+        </button>
+      </ion-buttons>
+      <p class="register-link">
+        <a routerLink="/recuperacion-pass">¡Olvidé mi contraseña..! </a>
+      </p>
+    </form>
+  </div>
+
+</ion-content>

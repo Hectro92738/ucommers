@@ -1,0 +1,109 @@
+.img_icon {
+    width: 30px;
+    height: auto;
+}
+
+.contenedor_mapa {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container_css {
+    margin: 1rem;
+}
+
+.btn_all {
+    background-color: var(--primary-all-v1);
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #4187ffa9;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.4;
+    }
+}
+
+.contenedor_nota {
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffbaba;
+    border: 1px solid #ff1707e1;
+    border-radius: 5px;
+}
+
+.nota {
+    font-size: 15px;
+    color: #620905;
+}
+
+.contenedor_nota_success {
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #c5ffba;
+    border: 1px solid #2cff07e1;
+    border-radius: 5px;
+}
+
+.nota_success {
+    font-size: 15px;
+    color: #20630b;
+}
+
+
+/* Contenedor general del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Espacio entre elementos */
+    padding: 1rem;
+}
+
+/* Estilo para los ion-items */
+ion-item {
+    --min-height: 50px;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    --background: #f9f9f9;
+    --border-color: #ddd;
+    --padding-start: 10px;
+}
+
+/* Input para fecha y hora */
+ion-datetime {
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+
+/* Texto de etiqueta */
+ion-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Opciones del select */
+ion-select {
+    --padding-start: 10px;
+    --padding-end: 10px;
+}
+
+/* Texto para inputs de tipo select */
+ion-select-option {
+    font-size: 0.9rem;
+}

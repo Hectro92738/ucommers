@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Resumen de pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="resumen-pedido">
+  <div class="container mt-1" >
+    <div class="tabla-container">
+      <table class="table-compact">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>{{ producto.nombre }}</td>
+            <td>${{ producto.precio }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td><strong>${{ producto.precio * producto.cantidad }}</strong></td>
+          </tr>
+        </tbody>
+        <tfoot style="font-size: 12px;">
+          <tr>
+            <td colspan="3" class="text-right"><strong>Subtotal:</strong></td>
+            <td class="text-primary"><strong>${{ getSubtotal() }}</strong></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right"><strong>Iva:</strong></td>
+            <td class="text-primary"><strong>${{ getIVA() }}</strong></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right"><strong>Total :</strong></td>
+            <td class="text-primary"><strong>${{ getTotalConIVA() }}</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="botones">
+      <!-- -----  -->
+      <ion-button color="white" expand="block" id="paypal-button-container" >
+      </ion-button>
+      <!-- -----  -->
+      <button class="btn_efectivo">
+        <ion-icon slot="start" name="cash-outline"></ion-icon>
+        Pago en efectivo
+      </button>
+    </div>
+  </div>
+</ion-content>

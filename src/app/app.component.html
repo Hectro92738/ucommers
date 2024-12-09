@@ -1,3 +1,8 @@
 <ion-app>
+  <!-- Spinner  -->
+  <div *ngIf="loading$ | async">
+    <div class="spinner"></div>
+    <div class="overlay"></div>
+  </div>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

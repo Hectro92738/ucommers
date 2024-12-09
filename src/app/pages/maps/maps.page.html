@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contenedor_mapa">
+    <div id="map"></div>
+  </div>
+  <div class="container_css">
+    <div class="contenedor_nota" *ngIf="msj">
+      <p class="nota">
+        <strong>Nota:</strong>
+        {{msj}}
+      </p>
+    </div>
+    <span *ngIf="!msj">
+      <div class="contenedor_nota_success">
+        <p class="nota_success">Puedes realizar la compra ✅</p>
+      </div>
+      <!-- (ngSubmit)="onSubmit()" -->
+      <form [formGroup]="lugarEntrega" >
+        <ion-item>
+          <ion-label>Selecciona un edificio</ion-label>
+          <ion-select formControlName="building">
+            <ion-select-option value="Cafetería">Cafetería</ion-select-option>
+            <ion-select-option value="Biblioteca">Biblioteca</ion-select-option>
+            <ion-select-option value="Edificio A">Edificio A</ion-select-option>
+            <ion-select-option value="Edificio D">Edificio D</ion-select-option>
+            <ion-select-option value="Edificio C">Edificio C</ion-select-option>
+            <ion-select-option value="Edificio K">Edificio K</ion-select-option>
+            <ion-select-option value="Edificio F">Edificio F</ion-select-option>
+            <ion-select-option value="Edificio I">Edificio I</ion-select-option>
+            <ion-select-option value="Edificio J">Edificio J</ion-select-option>
+            <ion-select-option value="Gimnasio Auditorio">Gimnasio Auditorio</ion-select-option>
+            <ion-select-option value="Cancha futbol rapido">Cancha futbol rapido</ion-select-option>
+            <ion-select-option value="Rectoria">Rectoria</ion-select-option>
+            <ion-select-option value="Vinculación">Vinculación</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+
+        <p>Día de entrega</p>
+        <ion-item>
+          <ion-datetime formControlName="dia" (ionChange)="onDateChange($event, 'dia')" presentation="date">
+          </ion-datetime>
+        </ion-item>
+
+        <p>Hora de entrega</p>
+        <ion-item>
+          <ion-datetime formControlName="hora" (ionChange)="onDateChange($event, 'hora')" [min]="minDate"
+            [max]="maxDate" [value]="currentDate" presentation="time">
+          </ion-datetime>
+        </ion-item>
+
+
+        <!-- Selector de tipo de pago -->
+        <ion-item>
+          <ion-label>Tipo de pago</ion-label>
+          <ion-select formControlName="paymentType">
+            <ion-select-option value="efectivo">Efectivo</ion-select-option>
+            <ion-select-option value="transferencia">Transferencia</ion-select-option>
+            <ion-select-option value="paypal">PayPal</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-button class="mt-3" expand="full" type="button" (click)="hacerPedido()" [disabled]="lugarEntrega.invalid">
+          Enviar
+        </ion-button>
+      </form>
+    </span>
+    <br><br><br>
+  </div>
+</ion-content>

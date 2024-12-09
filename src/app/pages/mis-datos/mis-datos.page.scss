@@ -1,0 +1,61 @@
+.espacio_img {
+    width: 20rem; // Tamaño del contenedor
+    height: 20rem;
+    border-radius: 50%; //Hace que el contenedor sea redondo
+    overflow: hidden; // Asegura que la imagen no se salga del borde redondeado
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen_producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; //Ajusta la imagen al contenedor sin deformarla 
+}
+
+// Estilo para que el ion-card no tenga márgenes indeseados 
+ion-card {
+    margin: 0;
+    padding: 20px;
+    width: 100%; // Ajusta este valor para controlar el ancho 
+    max-width: 1000px;
+    margin-left: auto; // Centrar horizontalmente 
+    margin-right: auto;
+    --box-shadow: none; // Elimina cualquier sombra
+}
+
+.card_perfil {
+    padding: 12px;
+}
+
+
+
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+    ion-content {
+        --padding-top: 4rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    ion-content {
+        --padding-top: 4rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+// --- WEB ☢️ 
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {}

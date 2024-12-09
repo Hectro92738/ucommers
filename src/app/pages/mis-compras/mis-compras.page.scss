@@ -1,0 +1,109 @@
+.img_icon {
+    width: 30px;
+    height: auto;
+}
+
+.cont_msj {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor_list {
+    display: flex;
+    justify-content: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    max-width: 1200px;
+    height: auto;
+}
+
+ion-list {
+    width: 100%;
+    max-width: 900px;
+}
+
+ion-item {
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ion-label {
+    display: block;
+    padding: 16px;
+}
+
+.btn_ver {
+    background-color: rgb(6, 162, 253);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.105);
+
+    &:hover {
+        background-color: rgba(6, 162, 253, 0.624);
+    }
+}
+
+.btn_ticket {
+    background-color: #37a1dfe5;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.105);
+
+    &:hover {
+        background-color: #37a2df82;
+    }
+}
+
+.btn_warning {
+    background-color: rgba(255, 213, 1, 0.912);
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+}
+
+.titulo_compra {
+    margin-left: 25px;
+}
+
+
+
+/* Asegura que las imágenes sean completamente redondas */
+.round-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    &:hover{
+        border: 1px solid #4a93ed;
+    }
+}
+
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+}

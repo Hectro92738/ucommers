@@ -1,0 +1,25 @@
+<ion-content class="ion-padding">
+  <ion-card *ngIf="currentUser">
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <div class="espacio_img">
+            <img src="assets/images/sin_perfil.jpg" alt="Logo" class="imagen_producto" loading="lazy">
+          </div>
+        </ion-col>
+
+        <ion-col>
+          <ion-button color="primary" shape="round">
+            Editar
+            <ion-icon name="pencil-outline"></ion-icon>
+          </ion-button>
+          <hr>
+          <h2>{{ currentUser.nombre }} {{ currentUser.apellido_paterno }} {{ currentUser.apellido_materno }}</h2>
+          <h2>{{ currentUser.email }}</h2>
+          <h2>Rol: <span class="text-danger">{{ currentUser.tipo }}</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <!-- </ion-content> -->
+</ion-content>

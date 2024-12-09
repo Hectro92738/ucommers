@@ -1,0 +1,153 @@
+ion-content {
+    --background: #f1f1f1;
+}
+
+.contenedor_css {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+}
+
+.contenedor_img {
+    margin-bottom: 20px;
+}
+
+.img_icon {
+    width: 100px;
+    height: auto;
+}
+
+.contenedor_btn {
+    display: flex;
+    margin: 15px;
+    gap: 10px;
+}
+
+.contenedor_nota {
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #baf3ff;
+    border: 1px solid #07b5ff;
+    border-radius: 5px;
+}
+
+.nota {
+    font-size: 14px;
+    color: #047d85;
+}
+
+.btn_carrito {
+    background-color: #37a1dfe5;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #37a2df82;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.4;
+    }
+}
+
+
+.btn_ctalogo {
+    background-color: var(--primary-all-v1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #4187ffa9;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.4;
+    }
+}
+
+.btn_compras {
+    background-color: #1e89b7c8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #1e89b783;
+    }
+
+    &:disabled {
+        cursor: not-allowed !important;
+        opacity: 0.4;
+    }
+}
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+    .contenedor_css {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        text-align: center;
+    }
+
+    .contenedor_btn {
+        display: grid;
+        margin: 15px;
+        gap: 10px;
+    }
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .contenedor_css {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        text-align: center;
+    }
+
+    .contenedor_btn {
+        display: grid;
+        margin: 15px;
+        gap: 10px;
+    }
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+    }
+
+}
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+// --- WEB ☢️ 
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {}

@@ -1,0 +1,36 @@
+.img_icon {
+    width: 30px;
+    height: auto;
+}
+
+.imagen_producto {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // Mantiene la proporción de la imagen y la ajusta dentro del contenedor 
+}
+
+
+
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+      }
+
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    // ion-content {
+    //     --padding-top: 4rem !important;
+    // }
+    ion-header {
+        margin-top: 3rem !important;
+      }
+
+}

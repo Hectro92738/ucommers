@@ -1,0 +1,336 @@
+.img_icon {
+  width: 30px;
+  height: auto;
+}
+
+
+.selec_stock {
+  background-color: #f0f0f000;
+  border-radius: 0px;
+  padding-left: 9px;
+  border-bottom: 1px solid #1e89b783;
+}
+
+.btn_agregar_carrito {
+  background-color: var(--primary-all-v1);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: #4187ffa9;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.4;
+  }
+}
+
+.bt_comprar {
+  background-color: #1e89b7c8;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: #1e89b783;
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.4;
+  }
+}
+
+// ----- ----- ----- 
+
+// ----- Producto ⬇️
+
+// Estilo para que el ion-card no tenga márgenes indeseados 
+.card_producto {
+  margin: 0;
+  padding: 20px;
+  width: 100%; // Ajusta este valor para controlar el ancho 
+  max-width: 1200px;
+  margin-left: auto; // Centrar horizontalmente 
+  margin-right: auto;
+  --box-shadow: none; // Elimina cualquier sombra
+}
+
+// contenedor de img del producto 
+.espacio_img {
+  width: 20rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; // Oculta cualquier parte que exceda el contenedor
+}
+
+// img para q se adapte a su contenedor  
+.imagen_producto {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; // Mantiene la proporción de la imagen y la ajusta dentro del contenedor 
+}
+
+// Alinear los botones para que estén centrados verticalmente 
+.botones_producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  gap: 20px; // Separación entre los botones 
+}
+
+// ----- ----- ----- 
+
+// ------ Vendedor ⬇️
+
+// carta de la info del vendedor 
+.card_vendedor {
+  margin: 0;
+  padding: 20px;
+  width: 100%; // Ajusta este valor para controlar el ancho 
+  max-width: auto;
+  margin-left: auto; // Centrar horizontalmente 
+  margin-right: auto;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.596);
+    color: rgb(3, 20, 63);
+  }
+}
+
+// contenedor donde la img se coloca
+.espacio_img_perfil {
+  width: 3rem;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden; // Oculta cualquier parte que exceda el contenedor
+}
+
+// adabtar la img a su contenedor espacio_img_perfil 
+.imagen_prfil {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; //adabta a su contenedor
+}
+
+// contenedor deonde se adabta la img y el monbre del vendedor
+.contenedor_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// nombre del vendedor 
+.profile_text {
+  flex: 2;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.seccion_cantidad {
+  display: flex;
+  flex-direction: column;
+  justify-content: first baseline;
+  gap: 30px; // Separación entre elementos
+}
+
+
+
+
+
+.contador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 20rem;
+  height: auto;
+
+  ion-button {
+    padding: 8px 12px;
+  }
+
+  ion-input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+}
+
+
+
+
+
+
+// ----- ----- ----- 
+
+// --- Movil 📱 ---
+
+
+// Para pantallas de móviles (hasta 480px) 
+@media (max-width: 480px) {
+  ion-header {
+    margin-top: 3rem !important;
+  }
+
+  .espacio_img {
+    margin-top: 10px;
+    width: 20rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; // Oculta cualquier parte que exceda el contenedor 
+  }
+
+  // carta de la info del vendedor 
+  .card_vendedor {
+    margin: 0rem;
+    padding: 30px;
+    width: 100%; // Ajusta este valor para controlar el ancho 
+    max-width: auto;
+    margin-left: auto; // Centrar horizontalmente 
+    margin-right: auto;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.596);
+      color: rgb(3, 20, 63);
+    }
+  }
+
+  .botones_producto {
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    gap: 10px; // Separación entre los botones 
+  }
+
+  .seccion_descipcion_producto {
+    padding-left: 50px;
+    margin: 0px;
+    gap: 2rem;
+  }
+
+  .contador {
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 0px;
+
+    ion-button {
+      padding: 8px 12px;
+    }
+
+    ion-input {
+      width: 50px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+}
+
+// Para pantallas de tablets pequeñas (entre 481px y 768px) 
+@media (min-width: 481px) and (max-width: 765px) {
+  ion-header {
+    margin-top: 3rem !important;
+  }
+
+  .espacio_img {
+    margin-top: 10px;
+    width: 20rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; // Oculta cualquier parte que exceda el contenedor 
+  }
+
+  // carta de la info del vendedor 
+  .card_vendedor {
+    margin: 0rem;
+    padding: 30px;
+    width: 100%; // Ajusta este valor para controlar el ancho 
+    max-width: auto;
+    margin-left: auto; // Centrar horizontalmente 
+    margin-right: auto;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.596);
+      color: rgb(3, 20, 63);
+    }
+  }
+
+  .seccion_descipcion_producto {
+    padding-left: 50px;
+    margin: 0rem;
+    gap: 1rem;
+  }
+
+}
+
+// --- WEB 💻 ---
+
+// Para pantallas de tablets grandes (entre 769px y 1024px) 
+@media (min-width: 766px) and (max-width: 835px) {
+
+  .espacio_img {
+    margin-top: 10px;
+    width: 21rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; // Oculta cualquier parte que exceda el contenedor 
+  }
+
+  // carta de la info del vendedor 
+  .card_vendedor {
+    margin: 0px;
+    padding: 10px;
+    width: 40%; // Ajusta este valor para controlar el ancho 
+    max-width: auto;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.596);
+      color: rgb(3, 20, 63);
+    }
+  }
+
+  .seccion_descipcion_producto {
+    padding: 20px;
+    gap: 2rem;
+  }
+
+  // Alinear los botones para que estén centrados verticalmente 
+  .botones_producto {
+    display: flex;
+    flex-direction: row; // Cambia a fila
+    justify-content: space-between; // Distribuye los elementos en la fila 
+    align-items: center; // Centra verticalmente 
+    gap: 10px; // Separación entre los botones y otros elementos 
+    width: 100%;
+  }
+
+  .botones_producto ion-button {
+    width: 12rem;
+  }
+
+}
+
+@media (min-width: 836px) and (max-width: 1180px) {}
+
+// Para pantallas de escritorio pequeñas (entre 1025px y 1280px) 
+@media (min-width: 1181px) and (max-width: 1280px) {}
+
+// Para pantallas de escritorio grandes (más de 1280px) 
+@media (min-width: 1281px) {}

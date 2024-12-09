@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <img src="assets/images/atras.png" alt="Logo" class="img_icon ms-1" loading="lazy">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="card_producto" *ngIf="producto">
+    <ion-grid>
+      <ion-row>
+        <!-- Primera parte: Imagen -->
+        <ion-col>
+          <h1 class="nombre_producto" *ngIf="!isLargeScreen">{{ producto.nombre }}</h1>
+          <div class="espacio_img">
+            <img [src]="producto.imagen ? urlImg +'/' + producto.imagen : 'assets/img_all/XD.jpg'"
+              alt="Imagen de {{ producto.nombre }}" class="imagen_producto" />
+          </div>
+        </ion-col>
+        <!-- Segunda parte: Nombre, Precio, Descripción   (click)="agregarCarrito(producto.id)"              -->
+        <ion-col class="seccion_descipcion_producto">
+          <h1 class="nombre_producto" *ngIf="isLargeScreen">{{ producto.nombre }}</h1>
+          <br *ngIf="isLargeScreen">
+          <h3 class="precio_producto text-danger">${{ producto.precio }}</h3>
+          <p class="text-success"><strong>{{producto.stock}}</strong> Exist</p>
+          <h5 class="descri_producto">{{ producto.descripcion }}</h5>
+          <!-- --- -->
+          <br *ngIf="isLargeScreen">
+        </ion-col>
+        <!-- Tercera parte: Botones -->
+        <ion-col class="botones_producto">
+          <button class="btn_agregar_carrito" (click)="confirmarAgregarCarrito(producto.id)"
+            [disabled]="producto.stock === 0">
+            Agregar al carrito
+            <!-- <img src="assets/images/comercio.png" alt="Logo" class="img_icon ms-1" loading="lazy"> -->
+          </button>
+          <div class="contador">
+            Cantidad: 
+            <ion-select class="ms-2 selec_stock" [(ngModel)]="producto.cantidad" [interfaceOptions]="customPopoverOptions" interface="popover">
+              <ion-select-option *ngFor="let i of getRange(1, producto.stock)" [value]="i">{{ i }}</ion-select-option>
+            </ion-select>
+          </div>
+          <button class="bt_comprar" [disabled]="producto.stock === 0" (click)="hacerPedido(producto)">
+            Comprar
+          </button>
+          <ion-card class="card_vendedor">
+            <h6 class="titulo_vendedor">Vendedor</h6>
+            <div class="contenedor_info">
+              <div class="espacio_img_perfil">
+                <img src="assets/images/avatar1.png" alt="Logo" class="imagen_prfil" loading="lazy">
+              </div>
+              <div class="profile_text">
+                {{ producto.user.nombre }}
+                {{ producto.user.apellido_paterno }}
+                {{ producto.user.apellido_materno }}
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

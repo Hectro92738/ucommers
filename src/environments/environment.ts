@@ -2,8 +2,14 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// environment.ts
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://cervaya.pro/ApiUcommers/api' ,
+  urlImg: 'https://cervaya.pro/ApiUcommers/storage/app/public/productos',
+
+  // apiUrl: 'http://localhost/ApiUcommers/api' ,
+  // urlImg: 'http://localhost/ApiUcommers/storage/app/public/productos',
 };
 
 /*

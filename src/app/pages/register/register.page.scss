@@ -1,0 +1,197 @@
+/* Contenedor del formulario centrado */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 100vh;
+  background-color: #28282813;
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espacio entre los botones */
+  margin-top: 1.5rem; /* Ajusta el margen superior si es necesario */
+}
+
+.btn_all_reguister {
+  background-color: #62626221;
+  border-radius: 25px;
+  padding: 13px;
+  margin: 5px;
+  color: #000000;
+  border: 1px solid #2757b7;
+  &:hover{
+    background-color: #6262624f;
+  }
+
+  width: 90%;
+}
+.btn_all_reguister:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+
+.text_imput{
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  justify-content: center; // Centrar horizontalmente */
+  align-items: center; // Centrar verticalmente */
+  text-align: center;
+}
+
+.register-form {
+  background-color: #f3f3f350;
+  padding: 10px;
+
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0);
+  width: 100%;
+  max-width: 400px;
+}
+
+ion-item {
+  margin-bottom: 15px;
+}
+
+ion-button {
+  margin-top: 20px;
+  --background: #3880ff;
+  --background-hover: #3171e0;
+  --background-activated: #2757b7;
+  --border-radius: 8px;
+}
+
+.img_arrow_right {
+  width: 18px;
+  height: auto;
+}
+
+.left-col {
+  flex: 2; //mas grande el número mas grande ce a¿hace la columna
+  margin: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  /* Mantener proporciones del logo */
+}
+
+// --- ANIMACIÓN DE APARICIÓN 
+.animacion_TEXT {
+  animation: slideInUp 1s ease-out;
+  /* Duración de 0.5 segundos */
+  opacity: 0;
+  /* Asegura que esté invisible hasta que se reproduzca la animación */
+  animation-fill-mode: forwards;
+  /* Mantiene el estado final después de la animación */
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    /* Posición inicial fuera de la pantalla, abajo */
+    opacity: 0;
+    /* Invisible al principio */
+  }
+
+  100% {
+    transform: translateY(0);
+    /* Posición final */
+    opacity: 1;
+    /* Totalmente visible */
+  }
+}
+
+// --- ---- --- --- --- --- --- --- --- --- --- --- 
+
+// --- Movil 📱 ---
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+  .logo-img {
+    width: 35%;
+    height: auto;
+  }
+
+  .right-col {
+    display: none !important;
+  }
+
+  form {
+    padding: 15px;
+  }
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  .right-col {
+    display: none !important;
+  }
+
+  .logo-img {
+    width: 35%;
+    height: auto;
+  }
+
+}
+
+// --- WEB 💻 ---
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo-img {
+    width: 30%;
+    height: auto;
+  }
+
+  .left-col {
+    flex: 2;
+    margin: 1rem;
+  }
+  .right-col {
+    flex: 1.9;
+    font-size: 14px !important;
+  }
+
+}
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .logo-img {
+    width: 25%;
+    height: auto;
+  }
+
+  .right-col {
+    flex: 1.5;
+    /* Disminuye el tamaño de la columna derecha */
+  }
+}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {
+  .logo-img {
+    width: 20%;
+    height: auto;
+  }
+
+  .right-col {
+    flex: 2;
+    /* Ajusta el tamaño de la columna derecha */
+  }
+}

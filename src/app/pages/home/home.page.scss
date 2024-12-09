@@ -1,0 +1,503 @@
+$color-titulo: #000000;
+$color-precio: #ff5722;
+$color-descuento: #4caf50;
+$color-texto: #666;
+
+.img_icon {
+  width: 20px;
+  height: auto;
+}
+
+.nombre_vendedor {
+  position: absolute;
+  padding: 2px;
+  top: 1px;
+}
+.custom-toolbar {
+  // arriba, derecha, abajo, izquierda
+  padding: 0rem 0rem 0rem 0rem;
+}
+
+.button_carrito {
+  display: block;
+}
+
+.text_categorias {
+  font-size: 11px !important;
+}
+
+.custom-search-bar {
+  --box-shadow: none; // Elimina cualquier sombra
+  --background: #ecececaf;
+}
+
+.ofertas_contenido {
+  background: linear-gradient(to bottom, var(--primary-all-v1) 20%, var(--ion-background-color) 100%) !important;
+  height: 30rem;
+  text-align: center;
+  display: block;
+}
+
+
+
+.filas_cartas {
+  --ion-grid-padding: 20px; // Padding general para el grid
+  justify-content: left; // Alineación centrada de las cartas
+}
+
+.text_inicio {
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+}
+
+
+.contenedor_cartas {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.carta_producto {
+  max-width: 260px;
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.043);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 10px;
+}
+
+.titulo_producto {
+  font-weight: bold;
+  font-size: 14px;
+  color: $color-titulo;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.carta_producto:hover {
+  // transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19);
+}
+
+.carta_header {
+  margin: 0px;
+}
+
+.precio_producto {
+  color: $color-precio;
+  font-size: 1.2em;
+}
+
+.descuento {
+  font-size: 0.8em;
+  color: $color-descuento;
+}
+
+.contenido_producto {
+  color: $color-texto;
+}
+
+// ----- ANIMACIÓN DE LAS CARTAS 
+
+.animacion_carta {
+  background-color: #ffffff;
+  animation: slideInUp 1s ease-out;
+  opacity: 0; // Asegura que esté invisible hasta que se reproduzca la animación 
+  animation-fill-mode: forwards; // Mantiene el estado final después de la animación 
+  cursor: pointer;
+}
+
+.animacion_carta:hover ion-card-title {
+  color: var(--primary-all-v1);
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    /* Posición inicial fuera de la pantalla, abajo */
+    opacity: 0;
+    /* Invisible al principio */
+  }
+
+  100% {
+    transform: translateY(0);
+    /* Posición final */
+    opacity: 1;
+    /* Totalmente visible */
+  }
+}
+
+
+// ----- ANIMACION DE LA BARRA 
+
+@keyframes slideInRight {
+  0% {
+    transform: translateY(100%);
+    /* Posición inicial fuera de la pantalla */
+    opacity: 0;
+    /* Invisible al principio */
+  }
+
+  100% {
+    transform: translateY(0);
+    /* Posición final */
+    opacity: 1;
+    /* Totalmente visible */
+  }
+}
+
+.barra_web1 ion-buttons,
+ion-searchbar {
+  animation: slideInRight 1s ease-out;
+  /* Duración de 0.6 segundos */
+}
+
+
+
+.lista_productos {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0rem;
+}
+
+.item_completo {
+  width: 100%; // Cada item debe ocupar el 100% del ancho
+  --inner-padding-end: 10px; // Ajusta este valor segunn sea necesario
+  --padding-start: 10px; // Ajusta este valor segunn sea necesario
+  margin-bottom: 20px !important; // Espacio entre cada item
+  display: flex; // Utiliza flex para alinear el contenido
+  align-items: center; // Centra verticalmente los elementos dentro de la fila
+}
+
+.item_completo ion-thumbnail {
+  width: 7rem;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; // Oculta cualquier parte que exceda el contenedor 
+  background-color: #f4f4f4; // Color de fondo opcional 
+}
+
+
+.ocultar_movil {
+  display: block;
+}
+
+ion-footer {
+  margin-top: 20px;
+
+  ion-toolbar {
+    --background: #3880ff;
+    color: white;
+  }
+
+  ion-button {
+    color: white;
+  }
+}
+
+
+
+// --- Movil 📱 ---
+
+/* Para pantallas de móviles (hasta 480px) */
+@media (max-width: 480px) {
+
+  .contenedor_cartas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .carta_producto {
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.067);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .imagen_producto {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+  }
+
+
+  ion-header {
+    margin-top: 3rem !important;
+  }
+
+  .ocultar_movil {
+    display: none;
+  }
+
+  .img_icon {
+    width: 15px;
+    height: auto;
+  }
+
+  .size_text {
+    font-size: 13px !important;
+  }
+
+  .ofertas_contenido {
+    display: none;
+  }
+}
+
+/* Para pantallas de tablets pequeñas (entre 481px y 768px) */
+@media (min-width: 481px) and (max-width: 765px) {
+
+  .contenedor_cartas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .carta_producto {
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.043);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+
+  ion-header {
+    margin-top: 3rem !important;
+  }
+
+  .ocultar_movil {
+    display: none;
+  }
+
+  .img_icon {
+    width: 15px;
+    height: auto;
+  }
+
+  .size_text {
+    font-size: 14px !important;
+  }
+
+  .ofertas_contenido {
+    display: none;
+  }
+
+}
+
+// --- WEB 💻 ---
+
+/* Para pantallas de tablets grandes (entre 769px y 1024px) */
+@media (min-width: 766px) and (max-width: 835px) {
+  .custom-toolbar {
+    // arriba, derecha, abajo, izquierda
+    padding: 0rem 2rem 0rem 0rem;
+  }
+
+  // ----  CARTAS ----
+
+  .contenedor_cartas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .carta_producto {
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.043);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .imagen_producto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .titulo_producto {
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-titulo;
+  }
+
+  .precio_producto {
+    color: $color-precio;
+    font-size: 1.2em;
+  }
+
+  .descuento {
+    font-size: 0.8em;
+    color: $color-descuento;
+  }
+
+  .contenido_producto {
+    color: $color-texto;
+  }
+
+  // ---- FIN DE LA CARTA ----
+}
+
+@media (min-width: 836px) and (max-width: 1180px) {
+  .custom-toolbar {
+    // arriba, derecha, abajo, izquierda
+    padding: 0rem 2rem 0rem 0rem;
+  }
+
+  // ----  CARTAS ----
+
+  .contenedor_cartas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .carta_producto {
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.043);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .imagen_producto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .titulo_producto {
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-titulo;
+  }
+
+  .precio_producto {
+    color: $color-precio;
+    font-size: 1.2em;
+  }
+
+  .descuento {
+    font-size: 0.8em;
+    color: $color-descuento;
+  }
+
+  .contenido_producto {
+    color: $color-texto;
+  }
+}
+
+/* Para pantallas de escritorio pequeñas (entre 1025px y 1280px) */
+@media (min-width: 1181px) and (max-width: 1280px) {
+  .custom-toolbar {
+    // arriba, derecha, abajo, izquierda
+    padding: 0rem 25rem 0rem 0rem;
+  }
+
+  // ----  CARTAS ----
+
+
+  .imagen_producto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  .titulo_producto {
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-titulo;
+  }
+
+  .precio_producto {
+    color: $color-precio;
+    font-size: 1.2em;
+  }
+
+  .descuento {
+    font-size: 0.8em;
+    color: $color-descuento;
+  }
+
+  .contenido_producto {
+    color: $color-texto;
+  }
+
+  // ---- FIN DE LA CARTA ---- 
+}
+
+/* Para pantallas de escritorio grandes (más de 1280px) */
+@media (min-width: 1281px) {
+
+  .custom-toolbar {
+    // arriba, derecha, abajo, izquierda
+    padding: 0rem 30rem 0rem 0rem;
+  }
+
+  // ----  CARTAS ----
+
+
+  .cont_img {
+    width: 80%;
+    height: 230px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .imagen_producto {
+    object-fit: cover;
+  }
+
+
+  // ---- FIN DE LA CARTA ---- 
+}
